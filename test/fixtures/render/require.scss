@@ -1,0 +1,18 @@
+.require {
+	null: ffi-require('../require-me', 'null');
+	undefined: ffi-require('../require-me', 'undefined');
+	string: ffi-require('../require-me', 'string');
+	pi: ffi-require('../require-me', 'pi');
+
+	$array: ffi-require('../require-me', 'array');
+	array: $array;
+	array-separator: list-separator($array);
+	array-is-bracketed: is-bracketed($array);
+
+	$object: ffi-require('../require-me', 'object');
+	object-as-list: append($object, null);
+
+	object-deep-key2-value: ffi-require('../require-me', 'object.key2');
+
+	require-no-property-path-keys: map-keys(ffi-require('../require-me'));
+}

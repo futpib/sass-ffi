@@ -1,0 +1,36 @@
+{
+  "name": "sass-ffi",
+  "version": "0.0.1",
+  "description": "Get JS values from SASS/SCSS",
+  "main": "index.js",
+  "license": "MIT OR GPL-3.0-or-later",
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "css-loader": "^2.1.1",
+    "eslint-config-xo-overrides": "^1.3.0",
+    "globby": "^9.2.0",
+    "loader-utils": "^1.2.3",
+    "memory-fs": "^0.4.1",
+    "node-sass": "^4.12.0",
+    "nyc": "^14.1.0",
+    "pify": "^4.0.1",
+    "sass-loader": "^7.1.0",
+    "to-string-loader": "^1.1.5",
+    "webpack": "^4.30.0",
+    "xo": "^0.24.0"
+  },
+  "ava": {
+    "verbose": true
+  },
+  "dependencies": {
+    "dot-prop": "^4.2.0"
+  },
+  "scripts": {
+    "test": "xo && nyc ava"
+  },
+  "xo": {
+    "extends": [
+      "eslint-config-xo-overrides"
+    ]
+  }
+}
