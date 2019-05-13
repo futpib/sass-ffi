@@ -1,6 +1,6 @@
 {
   "name": "sass-ffi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Get JS values from SASS/SCSS",
   "main": "index.js",
   "license": "MIT OR GPL-3.0-or-later",
