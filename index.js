@@ -1,4 +1,5 @@
 const path = require('path');
+const { sync: resolveSync } = require('resolve');
 const dotProp = require('dot-prop');
 
 const sass = require('node-sass');
@@ -69,12 +70,18 @@ const toSass = jsValue => {
 	}
 
 	if (typeof jsValue === 'object') {
-		const entries = Object.entries(jsValue);
+		const keys = Object.keys(jsValue);
 
-		const result = new sass.types.Map(entries.length);
-		for (const [ i, [ key, value ] ] of entries.entries()) {
+		const result = new sass.types.Map(keys.length);
+
+		let i = 0;
+		for (const key of keys) {
+			const value = jsValue[key];
+
 			result.setKey(i, toSass(key));
 			result.setValue(i, toSass(value));
+
+			i += 1;
 		}
 
 		return result;
@@ -95,8 +102,11 @@ const functions = {
 			this.options.includePaths :
 			this.options.includePaths.split(':');
 
-		const resolvedModulePath = require.resolve(modulePath, {
-			paths: [ dirname ].concat(includePaths).filter(Boolean),
+		const paths = includePaths.concat(dirname).filter(Boolean);
+		const basedir = paths[paths.length - 1];
+
+		const resolvedModulePath = resolveSync(modulePath, {
+			basedir,
 		});
 
 		const module = require(resolvedModulePath);
