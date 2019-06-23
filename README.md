@@ -57,7 +57,7 @@ module.exports = {
 ```scss
 // hack.scss
 
-$node-env: ffi-require('./config, 'env.NODE_ENV');
+$node-env: ffi-require('./config', 'env.NODE_ENV');
 
 body:after {
 	content: $node-env;
