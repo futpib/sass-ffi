@@ -24,7 +24,7 @@
     "verbose": true
   },
   "dependencies": {
-    "dot-prop": "^4.2.0",
+    "dot-prop": "^5.0.0",
     "resolve": "^1.10.1"
   },
   "scripts": {
