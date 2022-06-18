@@ -15,7 +15,7 @@
     "node-sass": "^4.12.0",
     "nyc": "^15.0.0",
     "pify": "^4.0.1",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^13.0.0",
     "to-string-loader": "^1.1.5",
     "webpack": "^4.30.0",
     "xo": "^0.25.0"
